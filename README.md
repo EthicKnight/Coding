@@ -1,3 +1,54 @@
+# Max Reachable Posts
+
+Hi there! I'm EthicKnight, and this is my implementation of a solution to a challenging graph traversal problem. The goal of this script is to determine the maximum number of posts that can be reached starting from any given post, given certain constraints.
+
+## Problem Description
+
+Given a set of posts connected by edges and each post being either initially "Red" (R) or "Green" (G), the task is to determine the maximum number of "Green" posts that can be reached starting from any post. The catch is that you can change the state of "Red" posts to "Green", but only in even numbers (0, 2, 4, etc.).
+
+## Implementation Details
+
+This solution involves several key components:
+
+1. **Depth-First Search (DFS)**: To traverse the graph and count reachable posts.
+2. **Configurations Generation**: To generate all possible configurations of posts where an even number of "Red" posts are turned "Green".
+3. **Graph Representation**: Using adjacency lists to represent the connections between posts.
+4. **Results Calculation**: To determine the maximum reachable posts for each starting post.
+
+## Usage
+
+To run this script, you need to provide the input via standard input (stdin). The input should be in the following format:
+
+1. An integer `N` representing the number of posts.
+2. `N-1` lines, each containing two integers representing a connection between two posts.
+3. A string of length `N` consisting of characters 'R' and 'G' representing the initial state of each post.
+
+### Example
+
+Here's an example input:
+
+```
+5
+1 2
+2 3
+3 4
+4 5
+RGRGG
+```
+
+You can run the script from the command line and provide the input like this:
+
+```sh
+python max_reachable_posts.py < input.txt
+```
+
+where `input.txt` contains the input data.
+
+## Code
+
+Here's the complete implementation:
+
+```python name=max_reachable_posts.py
 from itertools import combinations
 import sys
 
@@ -75,3 +126,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
+Feel free to reach out if you have any questions or suggestions!
